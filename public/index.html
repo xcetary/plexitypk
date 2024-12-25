@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация и Регистрация</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+    <link rel="stylesheet" href="css/forms.CSS">
+<body>
+  <div class="login-page">
+    <div class="form">
+      <!-- Форма регистрации -->
+      <form class="register-form" action="register.php" method="POST">
+        <input type="text" name="login" placeholder="Логин" required />
+        <input type="password" name="password" placeholder="Пароль" required />
+        <input type="password" name="password_repeat" placeholder="Повторный пароль" required />
+        <button type="submit">Зарегистрироваться</button>
+        <p class="message">Уже зарегистрированы? <a href="#">Войти</a></p>
+      </form>
+  
+      <!-- Форма авторизации -->
+      <form class="login-form" action="login.php" method="POST">
+        <input type="text" name="login" placeholder="Логин" required />
+        <input type="password" name="password" placeholder="Пароль" required />
+        <button type="submit">Войти</button>
+        <p class="message">Еще не зарегистрированы? <a href="#">Создать аккаунт</a></p>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    document.querySelector('.register-form').addEventListener('submit', function(e) {
+      const password = this.querySelector('input[name="password"]').value;
+      const passwordRepeat = this.querySelector('input[name="password_repeat"]').value;
+      if (password !== passwordRepeat) {
+        e.preventDefault();
+        alert('Пароли не совпадают!');
+      }
+    });
+  </script>
+  <script src="js/function.js"></script>
+</body>
+</html>

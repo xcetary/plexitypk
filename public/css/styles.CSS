@@ -1,0 +1,212 @@
+/* Убираем любые отступы и прокрутку */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Убираем любые отступы, прокрутку и позиционирование на родительских элементах */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Устанавливаем высоту на 100% */
+    width: 100%;   /* Устанавливаем ширину на 100% */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    overflow-y: scroll; /* Вертикальная прокрутка по умолчанию */
+    font-family: Arial, sans-serif;
+    background-color: #bbe1ff;
+}
+
+
+
+.navbar {
+    position: fixed; /* Фиксированная позиция */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000; /* Чтобы быть поверх других элементов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для визуального выделения */
+}
+
+.navbar-left .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-center {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #00bcd4;
+}
+
+.navbar-right .icon-link {
+    margin-left: 20px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+
+    transition: transform 0.3s;
+}
+
+.icon-link:hover .icon {
+    transform: scale(1.1);
+}
+
+.content {
+    padding-top: 70px; /* Отступ для компенсации высоты navbar */
+    margin: 20px;
+}
+
+/* Контейнер для слайдера */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота экрана */
+    overflow: hidden; /* Скрываем лишние части слайдера */
+}
+
+/* Контейнер слайдов */
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Слайды */
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1);
+    position: absolute;
+    transition: opacity 0.5s ease-out, transform 5s ease-in-out;
+}
+
+/* Слайд, который активен */
+.slide.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Фиксированное содержимое (надписи и кнопка) */
+.content {
+    /*position: fixed;*/
+    transform: translateY(-250%); /* Центрируем по вертикали */
+
+    color: white;
+    text-align: left;
+    z-index: 1000; /* Содержимое будет поверх слайдов */
+    max-width: 600px; /* Ограничиваем ширину */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Легкий фон для читаемости */
+    border-radius: 10px;
+}
+
+/* Заголовок */
+.content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+/* Описание */
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.content .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Контейнер для кнопок */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Уменьшенный разрыв между кнопками */
+    width: 100%;
+    background-color: #bbe1ff;
+    margin-top: 5vh;
+    padding-bottom: 20px;
+}
+
+/* Одиночная кнопка */
+.button {
+    width: 30%; /* 3 кнопки в ряд */
+    background-color: #007BFF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+.button p {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.button img {
+    max-width: 100%; /* Изображение будет занимать не более 80% ширины кнопки */
+    max-height: 100%; /* Ограничение по высоте для пропорционального отображения */
+    margin: auto; /* Центрирует изображение */
+    display: block; /* Убирает лишние отступы (если есть) */
+    border-radius: 5px;
+    object-fit: contain; /* Гарантирует сохранение пропорций изображения */
+}
+
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .button {
+        width: 48%; /* 2 кнопки в ряд для меньших экранов */
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        width: 100%; /* 1 кнопка в ряд для маленьких экранов */
+    }
+}
+
+
+
+

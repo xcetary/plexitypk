@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => {
+                document.body.insertAdjacentHTML('afterbegin', html);
+            });
+    </script>
+
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        .btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    
+        #catalog {
+            padding: 50px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+    </style>
+
+
+<!-- Слайдер -->
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide" style="background-image: url('5555.jpg');"></div>
+        <div class="slide" style="background-image: url('3.jpg');"></div>
+        <div class="slide" style="background-image: url('555.jpg');"></div>
+    </div>
+</div>
+
+<!-- Фиксированное содержимое (заголовок и кнопка) -->
+<div class="content">
+    <h1>PlexityPK</h1>
+    <p>Добро пожаловать!<br> В магазин современных комплектующих<br> для ваших игровых компьютеров!</p>
+    <a href="#catalog" class="btn">Каталог</a>
+</div>
+
+<!-- Контейнер для кнопок -->
+<div class="button-container">
+    <div class="button" onclick="window.location.href='proc.php'">
+        <img src="товары/проц.jpg" alt="Image 4">
+        <p>Процессоры</p>
+    </div>
+    <div class="button" onclick="window.location.href='mat.php'">
+        <img src="товары/мат.jpg" alt="Image 5">
+        <p>Материнские платы</p>
+    </div>
+    <div class="button" onclick="window.location.href='ozy.php'">
+        <img src="товары/озу.jpg" alt="Image 6">
+        <p>Оперативная память</p>
+    </div>
+    <div class="button" onclick="window.location.href='oxl.php'">
+        <img src="товары/кулер.jpg" alt="Image 7">
+        <p>Охлаждение компьютера</p>
+    </div>
+    <div class="button" onclick="window.location.href='disk.php'">
+        <img src="товары/жесткий.jpg" alt="Image 8">
+        <p>Жесткие диски HDD</p>
+    </div>
+    <div class="button" onclick="window.location.href='videocarta.php'">
+        <img src="товары/вкарта.jpg" alt="Image 9">
+        <p>Видеокарты</p>
+    </div>
+    <div class="button" onclick="window.location.href='korpys.php'">
+        <img src="товары/корпуса.jpg" alt="Image 10">
+        <p>Корпуса</p>
+    </div>
+    <div class="button" onclick="window.location.href='ssd.php'">
+        <img src="товары/ссд.jpg" alt="Image 11">
+        <p>Твердотельные накопители SSD</p>
+    </div>
+    <div class="button" onclick="window.location.href='display.php'">
+        <img src="товары/монитор.jpg" alt="Image 12">
+        <p>Мониторы</p>
+    </div>    
+</div>
+
+<!-- Якорь внизу страницы -->
+<div id="catalog">
+    
+</div>
+
+<footer style="background-color: #f4f4f4; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
+    <div>
+      <p>&copy; 2024 PlexityPK.</p>
+      <p>
+        <a href="/about" style="text-decoration: none; color: #333; margin: 0 10px;">О нас</a> |
+        <a href="/contact" style="text-decoration: none; color: #333; margin: 0 10px;">Контакты</a> |
+        <a href="/privacy" style="text-decoration: none; color: #333; margin: 0 10px;">Политика конфиденциальности</a>
+      </p>
+      <p>Email: <a href="mailto:info@plexitypk.com" style="text-decoration: none; color: #333;">info@plexitypk.com</a></p>
+    </div>
+  </footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
